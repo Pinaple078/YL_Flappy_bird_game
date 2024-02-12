@@ -9,7 +9,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT + ground_space))
 pygame.display.set_caption("Flappy Bird")
 
 
-# Класс, отвечающий за текст
+# Класс, отвечающий за текст в игре
 class GameIndicator:
     def __init__(self, screen):
         self.screen = screen
@@ -18,13 +18,13 @@ class GameIndicator:
         self.color = pygame.Color(245, 7, 114)
         self.inst_color = pygame.Color(6, 106, 194)
 
-    # очки
+    # Счётчик очков
     def show_score(self, int_score):
         bird_score = f'ОЧКИ: {int_score}'
         score = self.font.render(bird_score, True, self.color)
         self.screen.blit(score, (WIDTH - 270, 10))
 
-    # памятка как двигаться и перезапускать игру
+    # Мануал (сообщение о том, какие кнопки нажимать)
     def instructions(self):
         inst_text1 = 'Нажимайте "Пробел" чтобы прыгать'
         inst_text2 = 'Нажмите "R" чтобы перезапустить'
@@ -34,7 +34,7 @@ class GameIndicator:
         self.screen.blit(ins2, (130, 600))
 
 
-# Класс Птицы
+# Птица
 class Bird(pygame.sprite.Sprite):
     def __init__(self, pos, size):
         super().__init__()
@@ -42,7 +42,7 @@ class Bird(pygame.sprite.Sprite):
         self.animation_delay = 3
         self.jump_move = -9
 
-        # Взмахи крыльями
+        # Спрайт
         self.bird_img = import_sprite("img/bird")
         self.image = self.bird_img[self.frame_index]
         self.image = pygame.transform.scale(self.image, (size, size))
@@ -52,7 +52,7 @@ class Bird(pygame.sprite.Sprite):
         self.direction = pygame.math.Vector2(0, 0)
         self.score = 0
 
-    # анимация полета
+    # Анимация взмахов крыльями
     def _animate(self):
         sprites = self.bird_img
         sprite_index = (self.frame_index // self.animation_delay) % len(sprites)
@@ -63,7 +63,7 @@ class Bird(pygame.sprite.Sprite):
         if self.frame_index // self.animation_delay > len(sprites):
             self.frame_index = 0
 
-    # прыжок
+    # Анимация прыжка
     def _jump(self):
         self.direction.y = self.jump_move
 
@@ -73,7 +73,7 @@ class Bird(pygame.sprite.Sprite):
         self._animate()
 
 
-# Класс трубы
+# Труба
 class Pipe(pygame.sprite.Sprite):
     def __init__(self, pos, width, height, flip):
         super().__init__()
@@ -93,7 +93,7 @@ class Pipe(pygame.sprite.Sprite):
         if self.rect.right < (-self.width):
             self.kill()
 
-
+# Игровой мир (просчет физики, коллизии и реакции на нажатие клавиш)
 class World:
     def __init__(self, screen):
         self.screen = screen
@@ -115,7 +115,7 @@ class World:
         bird = Bird((WIDTH // 2 - pipe_size, HEIGHT // 2 - pipe_size), 30)
         self.player.add(bird)
 
-    # Добавляет новые трубы
+    # Добавление новых труб (для ф-ии выше)
     def _add_pipe(self):
         pipe_pair_size = random.choice(pipe_pair_sizes)
         top_pipe_height, bottom_pipe_height = pipe_pair_size[0] * pipe_size, pipe_pair_size[1] * pipe_size
@@ -141,7 +141,7 @@ class World:
 
     def _handle_collisions(self):
         bird = self.player.sprite
-        # Прооверка коллизии
+        # Проверка коллизии
         if pygame.sprite.groupcollide(self.player, self.pipes, False,
                                       False) or bird.rect.bottom >= HEIGHT or bird.rect.top <= 0:
             self.playing = False
@@ -159,7 +159,6 @@ class World:
         self.pipes.update(self.world_shift)
         self.pipes.draw(self.screen)
 
-        # Добавляем физику
         self._apply_gravity(self.player.sprite)
         self._scroll_x()
         self._handle_collisions()
@@ -184,6 +183,7 @@ class World:
         self.game.show_score(self.player.sprite.score)
 
 
+# Класс, посылающий сигналы при нажатии клавиш и запускающий сам игровой процесс
 class Main:
     def __init__(self, screen):
         self.screen = screen
