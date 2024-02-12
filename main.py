@@ -13,10 +13,10 @@ pygame.display.set_caption("Flappy Bird")
 class GameIndicator:
     def __init__(self, screen):
         self.screen = screen
-        self.font = pygame.font.SysFont('Bahnschrift', 60)
-        self.inst_font = pygame.font.SysFont('Bahnschrift', 35)
+        self.font = pygame.font.SysFont('Gagalin', 60)
+        self.inst_font = pygame.font.SysFont('Gagalin', 50)
         self.color = pygame.Color(245, 7, 114)
-        self.inst_color = pygame.Color(232, 28, 174)
+        self.inst_color = pygame.Color(6, 106, 194)
 
     # очки
     def show_score(self, int_score):
@@ -30,8 +30,8 @@ class GameIndicator:
         inst_text2 = 'Нажмите "R" чтобы перезапустить'
         ins1 = self.inst_font.render(inst_text1, True, self.inst_color)
         ins2 = self.inst_font.render(inst_text2, True, self.inst_color)
-        self.screen.blit(ins1, (150, 550))
-        self.screen.blit(ins2, (150, 600))
+        self.screen.blit(ins1, (115, 550))
+        self.screen.blit(ins2, (130, 600))
 
 
 # Класс Птицы
