@@ -14,7 +14,7 @@ pipe_pair_sizes = [
 ]
 pipe_size = HEIGHT // 10
 pipe_gap = (pipe_size * 2) + (pipe_size // 2) - 30
-ground_space = 75
+ground_space = 100
 
 
 def import_sprite(path):
