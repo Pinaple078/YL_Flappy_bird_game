@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cdcbcf0-715f-4133-bdf2-0dca920f11f6" name="Changes" comment="Загружаем код проекта, а еще ТЗ, реквайрментс и ридмишечку." />
+    <list default="true" id="4cdcbcf0-715f-4133-bdf2-0dca920f11f6" name="Changes" comment="добавим сюда презентуху">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,13 +31,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/user/PycharmProjects/YL_Flappy_bird"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/YL_Flappy_bird&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -52,11 +54,19 @@
       <option name="project" value="LOCAL" />
       <updated>1707676862498</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="обавим сюда презентуху">
+      <created>1707684005597</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707684005597</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Загружаем код проекта, а еще ТЗ, реквайрментс и ридмишечку." />
-    <option name="LAST_COMMIT_MESSAGE" value="Загружаем код проекта, а еще ТЗ, реквайрментс и ридмишечку." />
+    <MESSAGE value="обавим сюда презентуху" />
+    <option name="LAST_COMMIT_MESSAGE" value="обавим сюда презентуху" />
   </component>
 </project>
